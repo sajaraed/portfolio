@@ -186,11 +186,8 @@ export default function App() {
 
   return (
     <div className="bg-[#090a0f] text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-white font-sans overflow-x-hidden relative" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-      
-      {/* خلفية شبكية */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293d15_1px,transparent_1px),linear-gradient(to_bottom,#1f293d15_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
 
-      {/* 1. Navbar العلوي */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#090a0f]/80 backdrop-blur-xl border-b border-slate-800/60">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <a href="#about-hero" className="flex items-center gap-3">
@@ -222,7 +219,6 @@ export default function App() {
         </div>
       </header>
 
-      {/* 2. Hero Section */}
       <section id="about-hero" className="max-w-7xl mx-auto px-6 pt-36 pb-20 flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
         <div className="w-full lg:w-7/12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-8">
@@ -259,7 +255,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* بطاقة الصورة الشخصية */}
         <div className="w-full lg:w-5/12 flex justify-center">
           <div className="relative group scroll-animate opacity-0 translate-y-10 transition-all duration-700">
             <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
@@ -292,7 +287,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* 3. قسم الـ About (بطاقات: 2 فوق و2 تحت على الجوال وعلى اللابتوب بفضل استخدام grid-cols-2 دائماً) */}
       <section id="about-section" className="max-w-7xl mx-auto px-6 py-24 relative z-10">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-6 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
@@ -318,7 +312,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* هنا تم ضبط الـ grid ليصبح grid-cols-2 دائماً (2 فوق و2 تحت على الجوال واللابتوب) */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-4 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
             <div className="p-5 sm:p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-40 sm:h-48">
               <span className="text-cyan-400 text-base sm:text-lg">❖</span>
@@ -352,7 +345,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* 4. قسم المهارات */}
       <section id="skills" className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-3 tracking-tight">{currentT.toolkitTitle}</h2>
@@ -392,7 +384,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* 5. Experience & Education Section */}
       <section id="experience" className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 tracking-tight">{currentT.trackTitle}</h2>
@@ -493,7 +484,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* 6. Projects Section (هنا أيضاً يمكنك جعلها 2 فوق و2 تحت على اللابتوب باستخدام grid-cols-2 بدلاً من md:grid-cols-2) */}
       <section id="projects" className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 tracking-tight">{currentT.projectsTitle}</h2>
@@ -531,7 +521,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* 7. Contact Section */}
       <section id="contact" className="max-w-7xl mx-auto px-6 py-20 relative z-10 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 sm:p-12 rounded-3xl border border-slate-800/80 bg-slate-900/30 backdrop-blur-md">
           <div>
@@ -557,28 +546,26 @@ export default function App() {
           <form onSubmit={(e) => { e.preventDefault(); alert(lang === 'ar' ? 'تم استلام رسالتك بنجاح!' : 'Message sent successfully!'); }} className="space-y-4">
             <div>
               <label className="block text-xs font-medium text-slate-400 mb-1.5">{currentT.formName}</label>
-              <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-sm focus:border-cyan-500 focus:outline-none transition-colors" placeholder="Name" />
+              <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-sm focus:border-cyan-500 focus:outline-none transition-colors" />
             </div>
             <div>
               <label className="block text-xs font-medium text-slate-400 mb-1.5">{currentT.formEmail}</label>
-              <input type="email" required className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-sm focus:border-cyan-500 focus:outline-none transition-colors" placeholder="email@example.com" />
+              <input type="email" required className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-sm focus:border-cyan-500 focus:outline-none transition-colors" />
             </div>
             <div>
               <label className="block text-xs font-medium text-slate-400 mb-1.5">{currentT.formMessage}</label>
-              <textarea rows="4" required className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-sm focus:border-cyan-500 focus:outline-none transition-colors resize-none" placeholder="Your message..."></textarea>
+              <textarea rows="4" required className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-sm focus:border-cyan-500 focus:outline-none transition-colors resize-none"></textarea>
             </div>
             <button type="submit" className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-xl shadow-cyan-500/20 hover:opacity-90 transition-all">
-              {currentT.sendMsg} 🚀
+              {currentT.sendMsg}
             </button>
           </form>
         </div>
       </section>
 
-      {/* 8. Footer */}
-      <footer className="py-8 text-center border-t border-slate-900 text-xs text-slate-500 relative z-10">
-        <p>{currentT.footer}</p>
+      <footer className="max-w-7xl mx-auto px-6 py-10 border-t border-slate-800/80 text-center text-xs text-slate-500">
+        {currentT.footer}
       </footer>
-
     </div>
   );
 }
