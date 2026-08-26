@@ -429,7 +429,7 @@ export default function App() {
                     <span>⏳</span>
                     <span>{lang === 'en' ? 'Timeline' : 'الفترة الزمنية'}</span>
                   </div>
-                  <div className="font-bold text-white text-sm">2025 — Present</div>
+                  <div className="font-bold text-white text-sm">2024 — Present</div>
                 </div>
 
                 <div className="p-4 rounded-2xl border border-slate-800/60 bg-slate-950/40">
