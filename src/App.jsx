@@ -4,7 +4,6 @@ import profileImg from './assets/profile.png';
 export default function App() {
   const [lang, setLang] = useState('en');
 
-  // تأثير ظهور العناصر عند التمرير (Scroll Animation)
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -23,57 +22,83 @@ export default function App() {
 
   const t = {
     en: {
-      navAbout: "About", navSkills: "Skills", navProjects: "Projects", navExp: "Experience", navContact: "Contact",
-      badge: "Available for Opportunities ✨",
-      greeting: "Hello, I'm ",
-      name: "Saja Alwahedi.",
+      navAbout: "About", navSkills: "Skills", navExp: "Experience", navProjects: "Projects", navEdu: "Education", navContact: "Contact",
+      letstalk: "Let's talk",
+      badge: "Available for freelance & full-time roles",
+      greeting: "Hello, I'm Saja.",
       roleLine1: "Front-End",
-      roleLine2: "Developer & UI",
-      roleLine3: "Enthusiast",
-      bio: "Computer Science graduate and a Front-End developer specializing in building modern, responsive, and interactive web applications using React.js and Tailwind CSS.",
+      roleLine2: "Developer",
+      roleLine3: "& UI Enthusiast",
+      bio: "I build responsive user interfaces, interactive web applications, and modern digital experiences using React.js, Tailwind CSS, and modern web technologies.",
       viewProjects: "View Projects",
-      contactBtn: "Contact me",
+      downloadCv: "Download CV",
+      
+      aboutTag: "ABOUT",
+      aboutTitle: "Engineering ideas into real, intelligent products.",
+      aboutDesc1: "I'm a Computer Science student and front-end focused developer based in Gaza, shipping responsive user interfaces that pair clean modern architecture with smooth interactive experiences. I care about clean code, intuitive UI/UX design, and web apps that quietly do the right thing for the people using it.",
+      aboutDesc2: "Over the last few years I've built platforms for local projects, student applications and freelance clients — from interactive dashboards to full web stores — and I love turning a vague brief into a measurable result.",
+      
       toolkitTitle: "A practical, modern toolkit.",
-      toolkitSub: "The technologies and tools I use to build scalable web apps.",
+      toolkitSub: "The technologies I reach for to design, ship and scale reliable software.",
       trackTitle: "A short, focused track record.",
-      trackSub: "My academic background, training, and experience timeline.",
+      trackSub: "Shipping real systems for real teams.",
+      
+      eduTag: "EDUCATION",
+      eduTitle: "Academic foundation.",
+      universityName: "Al-Azhar University – Gaza",
+      degreeName: "B.Sc. in Computer Science",
+      gradYearLabel: "Graduation year",
+      gradeLabel: "Grade",
+      gradeValue: "Very Good — 85.77%",
+
       projectsTitle: "Featured projects.",
-      projectsSub: "Designed to scale, engineered for performance.",
+      projectsSub: "A few systems I've designed, built and shipped end-to-end.",
       liveDemo: "Live Demo",
-      code: "Source Code",
-      eduBadge: "Al-Azhar University of Gaza",
-      eduSub: "B.Sc. in Computer Science — Very Good (85.77%)",
+      github: "GitHub",
       letBuild: "Let's build something.",
-      letBuildSub: "Have a project in mind or want to collaborate? Feel free to reach out.",
+      letBuildSub: "Have a project, role or idea in mind? I'd love to hear about it.",
       formName: "Name",
       formEmail: "Email",
       formMessage: "Message",
       sendMsg: "Send message",
-      footer: "© 2026 Saja Alwahedi. All rights reserved."
+      footer: "© 2026 Saja Alwahedi. All Rights Reserved."
     },
     ar: {
-      navAbout: "عني", navSkills: "المهارات", navProjects: "المشاريع", navExp: "الخبرة", navContact: "تواصل معي",
-      badge: "متاحة للفرص المهنية ✨",
-      greeting: "مرحباً، أنا ",
-      name: "سجى الوحيدي.",
+      navAbout: "عني", navSkills: "المهارات", navExp: "الخبرة", navProjects: "المشاريع", navEdu: "التعليم", navContact: "تواصل معي",
+      letstalk: "دعنا نتحدث",
+      badge: "متاحة للأعمال الحرّة والوظائف الدائمة",
+      greeting: "مرحباً، أنا سجى.",
       roleLine1: "مطورة واجهات",
-      roleLine2: "أمامية ومصممة",
-      roleLine3: "تطبيقات الويب",
-      bio: "خريجة علوم حاسوب ومطورة واجهات أمامية متخصصة في بناء تطبيقات ويب عصرية، متجاوبة، وتفاعلية باستخدام React.js و Tailwind CSS.",
+      roleLine2: "أمامية",
+      roleLine3: "ومصممة ويب",
+      bio: "أقوم ببناء واجهات مستخدم متجاوبة، وتطبيقات ويب تفاعلية وعصرية باستخدام React.js و Tailwind CSS وأحدث تقنيات الويب.",
       viewProjects: "عرض المشاريع",
-      contactBtn: "تواصل معي",
+      downloadCv: "تحميل السيرة الذاتية",
+      
+      aboutTag: "عني",
+      aboutTitle: "تحويل الأفكار إلى منتجات حقيقية وذكية.",
+      aboutDesc1: "أنا طالبة علوم حاسوب ومطورة واجهات أمامية مقيمة في غزة، أقوم بتطوير واجهات مستخدم متجاوبة تجمع بين التصميم العصري والأداء السلس. أهتم بكتابة كود نظيف، تصميم تجربة مستخدم بديهية، وتطبيقات ويب تقدم أفضل قيمة للمستخدمين.",
+      aboutDesc2: "خلال السنوات الأخيرة، قمت ببناء منصات ومشاريع متعددة — بدءاً من لوحات التحكم التفاعلية وصولاً إلى المتاجر الإلكترونية — وأسعى دائماً لتحويل الأفكار البسيطة إلى نتائج مبهرة وملموسة.",
+      
       toolkitTitle: "أدوات عملية وعصرية.",
-      toolkitSub: "التقنيات والأساليب التي أستخدمها لبناء واجهات ويب تفاعلية ومرنة.",
-      trackTitle: "مسيرة مهنية وأكاديمية مركزة.",
-      trackSub: "خلاصة دراستي الأكاديمية والتدريب العملي.",
+      toolkitSub: "التقنيات التي أستخدمها لتصميم وتطوير برمجيات موثوقة وعالية الأداء.",
+      trackTitle: "مسيرة مهنية مركزة.",
+      trackSub: "تطوير أنظمة وتطبيقات حقيقية لفرق عمل متميزة.",
+      
+      eduTag: "التعليم",
+      eduTitle: "الأساس الأكاديمي.",
+      universityName: "جامعة الأزهر – غزة",
+      degreeName: "بكالوريوس في علوم الحاسوب",
+      gradYearLabel: "سنة التخرج",
+      gradeLabel: "التقدير",
+      gradeValue: "جيد جداً — 85.77%",
+
       projectsTitle: "أبرز المشاريع.",
-      projectsSub: "مشاريع مصممة بدقة لتقديم أداء عالي وتجربة مستخدم سلسة.",
+      projectsSub: "مشاريع قمت بتصميمها، بنائها وإطلاقها من البداية للنهاية.",
       liveDemo: "معاينة مباشرة",
-      code: "الكود المصدري",
-      eduBadge: "جامعة الأزهر بغزة",
-      eduSub: "بكالوريوس علوم الحاسوب — معدل جيد جداً (85.77%)",
-      letBuild: "لنبدأ العمل معاً.",
-      letBuildSub: "لديك مشروع قيد الإعداد أو ترغب بالتعاون؟ يسعدني جداً تواصلك.",
+      github: "جيت هب",
+      letBuild: "لنبدأ البناء.",
+      letBuildSub: "لديك مشروع، دور وظيفي أو فكرة في ذهنك؟ يسعدني سماعها.",
       formName: "الاسم",
       formEmail: "البريد الإلكتروني",
       formMessage: "الرسالة",
@@ -84,27 +109,47 @@ export default function App() {
 
   const currentT = t[lang];
 
-  // المهارات بنظام النشر والنسب المئوية مثل التصميم تماماً
-  const skillCategories = [
+  const skillCards = [
     {
       title: "Frontend",
-      percentage: "95%",
-      skills: ["React.js", "JavaScript", "Tailwind CSS", "HTML5", "CSS3", "Responsive UI"]
+      count: "5 skills",
+      skills: [
+        { name: "React.js", level: "96%" },
+        { name: "Tailwind CSS", level: "95%" },
+        { name: "HTML5", level: "97%" },
+        { name: "JavaScript", level: "94%" },
+        { name: "CSS3", level: "95%" }
+      ]
     },
     {
-      title: "Programming",
-      percentage: "90%",
-      skills: ["Java", "C++", "Python", "Algorithms"]
+      title: "Programming & Logic",
+      count: "4 skills",
+      skills: [
+        { name: "Java", level: "88%" },
+        { name: "C++", level: "85%" },
+        { name: "Python", level: "80%" },
+        { name: "Data Structures & Algorithms", level: "82%" }
+      ]
     },
     {
-      title: "Web Tools & APIs",
-      percentage: "88%",
-      skills: ["REST APIs", "Vite", "Leaflet.js", "Open-Meteo", "LocalStorage"]
+      title: "Tools & Workflow",
+      count: "4 skills",
+      skills: [
+        { name: "Git", level: "92%" },
+        { name: "GitHub", level: "92%" },
+        { name: "Vite", level: "90%" },
+        { name: "VS Code", level: "95%" }
+      ]
     },
     {
-      title: "Version Control & DB",
-      percentage: "85%",
-      skills: ["Git", "GitHub", "VS Code", "SQL", "Oracle"]
+      title: "APIs & Storage",
+      count: "4 skills",
+      skills: [
+        { name: "REST APIs", level: "88%" },
+        { name: "LocalStorage", level: "95%" },
+        { name: "SQL Databases", level: "85%" },
+        { name: "Responsive UI Design", level: "95%" }
+      ]
     }
   ];
 
@@ -112,7 +157,7 @@ export default function App() {
     {
       title: "Glass Weather Dashboard",
       desc: lang === 'en' ? "A modern weather dashboard featuring Glassmorphism design, dark/light themes, and interactive maps." : "لوحة تحكم للطقس بتصميم زجاجي عصري مع خرائط تفاعلية ودعم كامل للوضع الداكن.",
-      tech: ["HTML5", "Tailwind v4", "JavaScript", "Leaflet API"],
+      tech: ["HTML5", "Tailwind CSS", "JavaScript", "Leaflet API"],
       demo: "https://sajaraed.github.io/glass-weather-dashboard/",
       github: "https://github.com/sajaraed/glass-weather-dashboard"
     },
@@ -140,43 +185,51 @@ export default function App() {
   ];
 
   return (
-    <div className="bg-[#090a0f] text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-white font-sans overflow-x-hidden" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="bg-[#090a0f] text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-white font-sans overflow-x-hidden relative" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       
+      {/* خلفية شبكية */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293d15_1px,transparent_1px),linear-gradient(to_bottom,#1f293d15_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
+
       {/* 1. Navbar العلوي */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#090a0f]/80 backdrop-blur-xl border-b border-slate-800/60">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#090a0f]/80 backdrop-blur-xl border-b border-slate-800/60">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-lg shadow-lg shadow-cyan-500/20">
+          <a href="#about-hero" className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-lg shadow-lg shadow-cyan-500/20 text-white">
               S
             </div>
             <span className="font-bold text-lg tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
-              Saja Alwahedi
+              Saja<span className="text-cyan-400">.dev</span>
             </span>
-          </div>
+          </a>
 
-          <div className="hidden md:flex items-center gap-8 text-sm text-slate-400 font-medium">
-            <a href="#about" className="hover:text-cyan-400 transition-colors">{currentT.navAbout}</a>
+          <nav className="hidden md:flex items-center gap-8 text-sm text-slate-400 font-medium">
+            <a href="#about-section" className="hover:text-cyan-400 transition-colors">{currentT.navAbout}</a>
             <a href="#skills" className="hover:text-cyan-400 transition-colors">{currentT.navSkills}</a>
-            <a href="#projects" className="hover:text-cyan-400 transition-colors">{currentT.navProjects}</a>
             <a href="#experience" className="hover:text-cyan-400 transition-colors">{currentT.navExp}</a>
+            <a href="#projects" className="hover:text-cyan-400 transition-colors">{currentT.navProjects}</a>
+            <a href="#education" className="hover:text-cyan-400 transition-colors">{currentT.navEdu}</a>
             <a href="#contact" className="hover:text-cyan-400 transition-colors">{currentT.navContact}</a>
-          </div>
+          </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <button onClick={() => setLang(lang === 'en' ? 'ar' : 'en')} className="px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-cyan-400 text-xs font-bold hover:border-cyan-500/50 transition-all">
               🌐 {lang === 'en' ? 'AR' : 'EN'}
             </button>
+            <a href="#contact" className="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 hover:border-cyan-500/50 text-xs font-semibold text-white shadow-md transition-all">
+              {currentT.letstalk}
+            </a>
           </div>
         </div>
-      </nav>
+      </header>
 
       {/* 2. Hero Section */}
-      <section id="about" className="max-w-7xl mx-auto px-6 pt-36 pb-20 flex flex-col lg:flex-row items-center justify-between gap-16">
+      <section id="about-hero" className="max-w-7xl mx-auto px-6 pt-36 pb-20 flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
         <div className="w-full lg:w-7/12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-8">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
             {currentT.badge}
           </div>
+          
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight">
             {currentT.greeting}<br />
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-500 bg-clip-text text-transparent">
@@ -185,58 +238,153 @@ export default function App() {
             <span className="text-slate-200">{currentT.roleLine2}</span><br />
             <span className="text-slate-400 text-3xl sm:text-5xl">{currentT.roleLine3}</span>
           </h1>
+
           <p className="text-slate-400 text-base sm:text-lg mb-10 max-w-xl leading-relaxed">
             {currentT.bio}
           </p>
+
           <div className="flex flex-wrap gap-4">
             <a href="#projects" className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-xl shadow-cyan-500/20 hover:opacity-90 transition-all">
               {currentT.viewProjects}
             </a>
-            <a href="#contact" className="px-7 py-3.5 rounded-xl border border-slate-800 bg-slate-900/50 text-slate-300 font-semibold text-sm hover:border-cyan-500/50 transition-all">
-              {currentT.contactBtn}
+            <a 
+              href={`${import.meta.env.BASE_URL}Saja_Alwahedi_CV.pdf`}
+              target="_blank" 
+              rel="noopener noreferrer"
+              download="Saja_Alwahedi_CV.pdf" 
+              className="px-7 py-3.5 rounded-xl border border-slate-800 bg-slate-900/50 text-slate-300 font-semibold text-sm hover:border-cyan-500/50 transition-all text-center inline-block"
+            >
+              {currentT.downloadCv}
             </a>
           </div>
         </div>
 
-{/* صورة الشخصية تماماً بنمط الشاب */}
-<div className="w-full lg:w-5/12 flex justify-center">
+        {/* بطاقة الصورة الشخصية */}
+        <div className="w-full lg:w-5/12 flex justify-center">
           <div className="relative group scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-            <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-70 transition duration-500"></div>
+            <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
+            
             <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-[2rem] border border-slate-800 bg-gradient-to-b from-slate-900 to-[#0b0e14] overflow-hidden p-3 shadow-2xl">
               <img src={profileImg} alt="Saja Alwahedi" className="w-full h-full object-cover object-top rounded-2xl" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl backdrop-blur-md bg-slate-950/80 border border-slate-800/80 flex items-center justify-between">
+              
+              <div className="absolute top-6 left-6 px-3 py-1.5 rounded-xl backdrop-blur-md bg-slate-950/80 border border-slate-800/80 text-[11px]">
+                <div className="text-slate-400 text-[9px] uppercase tracking-wider font-mono">Stack</div>
+                <div className="font-bold text-cyan-400">React · Tailwind</div>
+              </div>
+
+              <div className="absolute top-1/2 right-4 -translate-y-1/2 px-3 py-1.5 rounded-xl backdrop-blur-md bg-slate-950/80 border border-slate-800/80 text-[11px]">
+                <div className="text-slate-400 text-[9px] uppercase tracking-wider font-mono">Focus</div>
+                <div className="font-bold text-cyan-400">UI / UX Design</div>
+              </div>
+
+              <div className="absolute bottom-6 left-6 right-6 p-3.5 rounded-xl backdrop-blur-md bg-slate-950/90 border border-slate-800/80 flex items-center justify-between text-xs">
                 <div>
-                  <div className="text-xs font-bold text-cyan-400">Saja Alwahedi</div>
-                  <div className="text-[10px] text-slate-400">Front-End Developer</div>
+                  <div className="text-[10px] text-cyan-400 font-bold">Saja Alwahedi</div>
+                  <div className="text-[10px] text-slate-400">Gaza, Palestine</div>
                 </div>
-                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></div>
+                <div className="text-right">
+                  <div className="text-[10px] text-slate-400">Open to</div>
+                  <div className="font-bold text-emerald-400">Remote · Global</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. Toolkit & Skills Section (نفس شبكة الكروت والنسب) */}
-      <section id="skills" className="max-w-7xl mx-auto px-6 py-20">
-        <div className="mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 tracking-tight">{currentT.toolkitTitle}</h2>
-          <p className="text-slate-400 text-sm">{currentT.toolkitSub}</p>
+      {/* 3. قسم الـ About (بطاقات: 2 فوق و2 تحت على الجوال وعلى اللابتوب بفضل استخدام grid-cols-2 دائماً) */}
+      <section id="about-section" className="max-w-7xl mx-auto px-6 py-24 relative z-10">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-6 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          {currentT.aboutTag}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillCategories.map((cat, idx) => (
-            <div key={idx} className="p-6 rounded-3xl border border-slate-800/80 bg-slate-900/40 hover:border-cyan-500/40 transition-all scroll-animate opacity-0 translate-y-10 duration-700" style={{ transitionDelay: `${idx * 100}ms` }}>
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-cyan-400 text-sm">{cat.title}</h3>
-                <span className="text-xs font-mono text-slate-500 bg-slate-800/60 px-2 py-0.5 rounded-md">{cat.percentage}</span>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-7 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-8 leading-[1.2]">
+              {currentT.aboutTitle}
+            </h2>
+            <p className="text-slate-300 text-base sm:text-lg mb-6 leading-relaxed">
+              {currentT.aboutDesc1}
+            </p>
+            <p className="text-slate-400 text-sm sm:text-base mb-10 leading-relaxed">
+              {currentT.aboutDesc2}
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              <span className="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300">🎓 Computer Science Student</span>
+              <span className="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300">💻 Front-End Developer</span>
+              <span className="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300">✨ UI Integration Specialist</span>
+            </div>
+          </div>
+
+          {/* هنا تم ضبط الـ grid ليصبح grid-cols-2 دائماً (2 فوق و2 تحت على الجوال واللابتوب) */}
+          <div className="lg:col-span-5 grid grid-cols-2 gap-4 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+            <div className="p-5 sm:p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-40 sm:h-48">
+              <span className="text-cyan-400 text-base sm:text-lg">❖</span>
+              <div>
+                <div className="text-2xl sm:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">3+</div>
+                <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Years Experience</div>
               </div>
-              <div className="w-full bg-slate-800/60 h-1.5 rounded-full mb-5 overflow-hidden">
-                <div className="bg-gradient-to-r from-cyan-500 to-blue-600 h-full rounded-full" style={{ width: cat.percentage }}></div>
+            </div>
+            <div className="p-5 sm:p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-40 sm:h-48">
+              <span className="text-cyan-400 text-base sm:text-lg">❖</span>
+              <div>
+                <div className="text-2xl sm:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">15+</div>
+                <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Projects Completed</div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {cat.skills.map((s, sIdx) => (
-                  <span key={sIdx} className="text-[11px] px-2.5 py-1 rounded-lg border border-slate-800 bg-slate-950/50 text-slate-300 font-medium">
-                    {s}
-                  </span>
+            </div>
+            <div className="p-5 sm:p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-40 sm:h-48">
+              <span className="text-cyan-400 text-base sm:text-lg">❖</span>
+              <div>
+                <div className="text-xl sm:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">React</div>
+                <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Frontend Specialist</div>
+              </div>
+            </div>
+            <div className="p-5 sm:p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-40 sm:h-48">
+              <span className="text-cyan-400 text-base sm:text-lg">❖</span>
+              <div>
+                <div className="text-xl sm:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">UI/UX</div>
+                <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Modern Interfaces</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. قسم المهارات */}
+      <section id="skills" className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+        <div className="mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-3 tracking-tight">{currentT.toolkitTitle}</h2>
+          <p className="text-slate-400 text-sm sm:text-base">{currentT.toolkitSub}</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {skillCards.map((card, idx) => (
+            <div key={idx} className="p-8 rounded-3xl border border-slate-800/80 bg-slate-900/40 hover:border-cyan-500/40 transition-all scroll-animate opacity-0 translate-y-10 duration-700 shadow-xl" style={{ transitionDelay: `${idx * 150}ms` }}>
+              <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                    ❖
+                  </div>
+                  <h3 className="font-bold text-lg text-slate-100">{card.title}</h3>
+                </div>
+                <span className="text-xs font-mono text-slate-400 px-3 py-1 rounded-full bg-slate-800/60 border border-slate-700/50">
+                  {card.count}
+                </span>
+              </div>
+
+              <div className="space-y-6">
+                {card.skills.map((skill, sIdx) => (
+                  <div key={sIdx}>
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="text-slate-300 font-medium">{skill.name}</span>
+                      <span className="font-mono text-slate-400 text-xs">{skill.level}</span>
+                    </div>
+                    <div className="w-full bg-slate-800/60 h-2 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                      <div className="bg-gradient-to-r from-cyan-500 via-teal-400 to-blue-600 h-full rounded-full transition-all duration-1000" style={{ width: skill.level }}></div>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -244,34 +392,109 @@ export default function App() {
         </div>
       </section>
 
-      {/* 4. Track Record (الخبرة والتعليم) */}
-      <section id="experience" className="max-w-7xl mx-auto px-6 py-20">
+      {/* 5. Experience & Education Section */}
+      <section id="experience" className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 tracking-tight">{currentT.trackTitle}</h2>
           <p className="text-slate-400 text-sm">{currentT.trackSub}</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="p-8 rounded-3xl border border-slate-800/80 bg-slate-900/40 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-            <div className="text-cyan-400 font-mono text-xs mb-2">2025 — 2026</div>
-            <h3 className="text-lg font-bold mb-1">Front-End Developer Intern</h3>
-            <p className="text-xs text-slate-400 mb-4">Tech Code | Gaza (120 Training Hours)</p>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              {lang === 'en' ? "Built responsive UI components using modern technologies, applied Git/GitHub workflows, and optimized cross-device web performance." : "بناء مكونات واجهات مستخدم متجاوبة باستخدام التقنيات الحديثة وتطبيق إدارة المشاريع عبر Git & GitHub."}
-            </p>
-          </div>
-          <div className="p-8 rounded-3xl border border-slate-800/80 bg-slate-900/40 scroll-animate opacity-0 translate-y-10 transition-all duration-700 delay-150">
-            <div className="text-cyan-400 font-mono text-xs mb-2">2022 — 2026</div>
-            <h3 className="text-lg font-bold mb-1">B.Sc. in Computer Science</h3>
-            <p className="text-xs text-slate-400 mb-4">Al-Azhar University – Gaza</p>
-            <div className="inline-block px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
-              {lang === 'en' ? 'Very Good — 85.77%' : 'جيد جداً — 85.77%'}
+          
+          <div className="p-8 rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-[#0b0e14] scroll-animate opacity-0 translate-y-10 transition-all duration-700 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              {lang === 'en' ? 'EXPERIENCE' : 'الخبرة المهنية'}
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-8 tracking-tight text-white">
+              {lang === 'en' ? 'Professional track.' : 'المسار المهني.'}
+            </h2>
+
+            <div className="p-7 rounded-3xl border border-slate-800/80 bg-[#0c0e15]/90 relative">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xl shadow-lg shadow-cyan-500/20 shrink-0">
+                  💻
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1">Front-End Developer</h3>
+                  <p className="text-xs text-slate-400 font-medium">Independent & Freelance</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="p-4 rounded-2xl border border-slate-800/60 bg-slate-950/40">
+                  <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
+                    <span>⏳</span>
+                    <span>{lang === 'en' ? 'Timeline' : 'الفترة الزمنية'}</span>
+                  </div>
+                  <div className="font-bold text-white text-sm">2025 — Present</div>
+                </div>
+
+                <div className="p-4 rounded-2xl border border-slate-800/60 bg-slate-950/40">
+                  <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
+                    <span>💼</span>
+                    <span>{lang === 'en' ? 'Status' : 'الحالة'}</span>
+                  </div>
+                  <div className="font-bold text-emerald-400 text-sm">Active & Available</div>
+                </div>
+              </div>
+
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80 pt-4">
+                {lang === 'en' 
+                  ? "Building responsive web apps, interactive user interfaces, and integrating modern design components." 
+                  : "تطوير تطبيقات ويب متجاوبة، واجهات مستخدم تفاعلية، ودمج مكونات التصميم الحديثة."}
+              </p>
             </div>
           </div>
+
+          <div id="education" className="p-8 rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-[#0b0e14] scroll-animate opacity-0 translate-y-10 transition-all duration-700 delay-150 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+              {currentT.eduTag}
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-8 tracking-tight text-white">{currentT.eduTitle}</h2>
+
+            <div className="p-7 rounded-3xl border border-slate-800/80 bg-[#0c0e15]/90 relative">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xl shadow-lg shadow-cyan-500/20 shrink-0">
+                  🎓
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1">{currentT.universityName}</h3>
+                  <p className="text-xs text-slate-400 font-medium">{currentT.degreeName}</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-2xl border border-slate-800/60 bg-slate-950/40">
+                  <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
+                    <span>📅</span>
+                    <span>{currentT.gradYearLabel}</span>
+                  </div>
+                  <div className="font-bold text-white text-sm">2026</div>
+                </div>
+
+                <div className="p-4 rounded-2xl border border-slate-800/60 bg-slate-950/40">
+                  <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
+                    <span>🏆</span>
+                    <span>{currentT.gradeLabel}</span>
+                  </div>
+                  <div className="font-bold text-emerald-400 text-sm">{currentT.gradeValue}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* 5. Featured Projects (المشاريع المميزة بنظام البطاقات) */}
-      <section id="projects" className="max-w-7xl mx-auto px-6 py-20">
+      {/* 6. Projects Section (هنا أيضاً يمكنك جعلها 2 فوق و2 تحت على اللابتوب باستخدام grid-cols-2 بدلاً من md:grid-cols-2) */}
+      <section id="projects" className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3 tracking-tight">{currentT.projectsTitle}</h2>
           <p className="text-slate-400 text-sm">{currentT.projectsSub}</p>
@@ -280,7 +503,7 @@ export default function App() {
           {projects.map((project, idx) => (
             <div key={idx} className="p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 hover:border-cyan-500/50 transition-all flex flex-col justify-between group scroll-animate opacity-0 translate-y-10 duration-700" style={{ transitionDelay: `${idx * 150}ms` }}>
               <div>
-                <div className="h-40 rounded-2xl bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800/60 mb-6 flex items-center justify-center relative overflow-hidden group-hover:border-cyan-500/30 transition-colors">
+                <div className="h-44 rounded-2xl bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800/60 mb-6 flex items-center justify-center relative overflow-hidden group-hover:border-cyan-500/30 transition-colors">
                   <span className="text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                     {project.title.split(' ')[0]}
                   </span>
@@ -300,7 +523,7 @@ export default function App() {
                   {currentT.liveDemo} 🚀
                 </a>
                 <a href={project.github} target="_blank" rel="noreferrer" className="flex-1 py-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-cyan-400 text-slate-300 text-xs font-semibold text-center transition-all">
-                  {currentT.code} 💻
+                  {currentT.github} 💻
                 </a>
               </div>
             </div>
@@ -308,8 +531,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* 6. Contact Section (نموذج التواصل مطابق تماماً للتصميم) */}
-      <section id="contact" className="max-w-7xl mx-auto px-6 py-20 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+      {/* 7. Contact Section */}
+      <section id="contact" className="max-w-7xl mx-auto px-6 py-20 relative z-10 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 sm:p-12 rounded-3xl border border-slate-800/80 bg-slate-900/30 backdrop-blur-md">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-3">{currentT.letBuild}</h2>
@@ -351,8 +574,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* 7. Footer */}
-      <footer className="py-8 text-center border-t border-slate-900 text-xs text-slate-500">
+      {/* 8. Footer */}
+      <footer className="py-8 text-center border-t border-slate-900 text-xs text-slate-500 relative z-10">
         <p>{currentT.footer}</p>
       </footer>
 
