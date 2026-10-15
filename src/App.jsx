@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import profileImg from './assets/profile.png';
+import profileImg from './assets/me.png';
+import profileCv from './assets/Saja_Alwahedi_CV.pdf';
 
 export default function App() {
   const [lang, setLang] = useState('en');
@@ -118,7 +119,9 @@ export default function App() {
         { name: "Tailwind CSS", level: "95%" },
         { name: "HTML5", level: "97%" },
         { name: "JavaScript", level: "94%" },
-        { name: "CSS3", level: "95%" }
+        { name: "CSS3", level: "95%" },
+        { name: "TaypeScript", level: "95%" }
+
       ]
     },
     {
@@ -171,7 +174,7 @@ export default function App() {
     {
       title: "BS Luxury Hotel Website",
       desc: lang === 'en' ? "An interactive luxury hotel website featuring high responsiveness and smooth scroll animations." : "موقع فندق فاخر تفاعلي بتصميم عالي التجاوب مع مؤثرات حركية سلسة.",
-      tech: ["HTML5", "Tailwind CSS", "JavaScript"],
+      tech: ["React.js", "TypeScript", "Tailwind CSS"],
       demo: "https://sajaraed.github.io/hotel-bs/",
       github: "https://github.com/sajaraed/hotel-bs"
     },
@@ -181,7 +184,16 @@ export default function App() {
       tech: ["HTML5", "CSS3", "JavaScript"],
       demo: "https://sajaraed.github.io/notes-app/",
       github: "https://github.com/sajaraed/notes-app"
-    }
+    },
+    {
+  title: "Digital Wedding Invitation",
+  desc: lang === 'en'
+    ? "An elegant and interactive digital wedding invitation card built with React, TypeScript, Vite, Tailwind CSS, and Framer Motion, featuring smooth envelope-opening animations and RSVP."
+    : "بطاقة دعوة زفاف رقمية أنيقة وتفاعلية باستخدام React وTypeScript، مع حركات فتح الظرف وخاصية تأكيد الحضور.",
+  tech: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  demo: "https://sajaraed.github.io/wedding-invitation-card/",
+  github: "https://github.com/sajaraed/wedding-invitation-card"
+}
   ];
 
   return (
@@ -244,7 +256,7 @@ export default function App() {
               {currentT.viewProjects}
             </a>
             <a 
-              href={`${import.meta.env.BASE_URL}Saja_Alwahedi_CV.pdf`}
+             href={profileCv}
               target="_blank" 
               rel="noopener noreferrer"
               download="Saja_Alwahedi_CV.pdf" 
