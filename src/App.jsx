@@ -120,22 +120,21 @@ export default function App() {
         { name: "HTML5", level: "97%" },
         { name: "JavaScript", level: "94%" },
         { name: "CSS3", level: "95%" },
-        { name: "TaypeScript", level: "95%" }
-
+        { name: "TypeScript", level: "95%" }
       ]
     },
     {
-      title: "Programming & Logic",
+      title: "Programming",
       count: "4 skills",
       skills: [
         { name: "Java", level: "88%" },
         { name: "C++", level: "85%" },
         { name: "Python", level: "80%" },
-        { name: "Data Structures & Algorithms", level: "82%" }
+        { name: "Algorithms", level: "82%" }
       ]
     },
     {
-      title: "Tools & Workflow",
+      title: "Tools",
       count: "4 skills",
       skills: [
         { name: "Git", level: "92%" },
@@ -145,13 +144,13 @@ export default function App() {
       ]
     },
     {
-      title: "APIs & Storage",
+      title: "APIs & DB",
       count: "4 skills",
       skills: [
         { name: "REST APIs", level: "88%" },
         { name: "LocalStorage", level: "95%" },
-        { name: "SQL Databases", level: "85%" },
-        { name: "Responsive UI Design", level: "95%" }
+        { name: "SQL", level: "85%" },
+        { name: "Responsive UI", level: "95%" }
       ]
     }
   ];
@@ -186,14 +185,14 @@ export default function App() {
       github: "https://github.com/sajaraed/notes-app"
     },
     {
-  title: "Digital Wedding Invitation",
-  desc: lang === 'en'
-    ? "An elegant and interactive digital wedding invitation card built with React, TypeScript, Vite, Tailwind CSS, and Framer Motion, featuring smooth envelope-opening animations and RSVP."
-    : "بطاقة دعوة زفاف رقمية أنيقة وتفاعلية باستخدام React وTypeScript، مع حركات فتح الظرف وخاصية تأكيد الحضور.",
-  tech: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-  demo: "https://sajaraed.github.io/wedding-invitation-card/",
-  github: "https://github.com/sajaraed/wedding-invitation-card"
-}
+      title: "Digital Wedding Invitation",
+      desc: lang === 'en'
+        ? "An elegant and interactive digital wedding invitation card built with React, TypeScript, Vite, Tailwind CSS, and Framer Motion, featuring smooth envelope-opening animations and RSVP."
+        : "بطاقة دعوة زفاف رقمية أنيقة وتفاعلية باستخدام React وTypeScript، مع حركات فتح الظرف وخاصية تأكيد الحضور.",
+      tech: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      demo: "https://sajaraed.github.io/wedding-invitation-card/",
+      github: "https://github.com/sajaraed/wedding-invitation-card"
+    }
   ];
 
   return (
@@ -201,12 +200,12 @@ export default function App() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293d15_1px,transparent_1px),linear-gradient(to_bottom,#1f293d15_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
 
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#090a0f]/80 backdrop-blur-xl border-b border-slate-800/60">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <a href="#about-hero" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-lg shadow-lg shadow-cyan-500/20 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+          <a href="#about-hero" className="flex items-center gap-2 sm:gap-3">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-base sm:text-lg shadow-lg shadow-cyan-500/20 text-white">
               S
             </div>
-            <span className="font-bold text-lg tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+            <span className="font-bold text-base sm:text-lg tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
               Saja<span className="text-cyan-400">.dev</span>
             </span>
           </a>
@@ -220,8 +219,8 @@ export default function App() {
             <a href="#contact" className="hover:text-cyan-400 transition-colors">{currentT.navContact}</a>
           </nav>
 
-          <div className="flex items-center gap-4">
-            <button onClick={() => setLang(lang === 'en' ? 'ar' : 'en')} className="px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-cyan-400 text-xs font-bold hover:border-cyan-500/50 transition-all">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <button onClick={() => setLang(lang === 'en' ? 'ar' : 'en')} className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-cyan-400 text-[11px] sm:text-xs font-bold hover:border-cyan-500/50 transition-all">
               🌐 {lang === 'en' ? 'AR' : 'EN'}
             </button>
             <a href="#contact" className="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 hover:border-cyan-500/50 text-xs font-semibold text-white shadow-md transition-all">
@@ -231,75 +230,55 @@ export default function App() {
         </div>
       </header>
 
-      <section id="about-hero" className="max-w-7xl mx-auto px-6 pt-36 pb-20 flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
-        <div className="w-full lg:w-7/12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-8">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            {currentT.badge}
+      {/* قسم الهيرو */}
+      <section id="about-hero" className="max-w-7xl mx-auto px-4 sm:px-6 pt-28 sm:pt-36 pb-12 sm:pb-20 flex flex-row items-center justify-between gap-4 sm:gap-16 relative z-10">
+        <div className="w-7/12 sm:w-7/12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-4 sm:mb-8">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span className="truncate">{currentT.badge}</span>
           </div>
           
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight">
+          <h1 className="text-2xl sm:text-6xl lg:text-7xl font-extrabold mb-4 sm:mb-6 leading-[1.1] tracking-tight">
             {currentT.greeting}<br />
             <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-500 bg-clip-text text-transparent">
               {currentT.roleLine1}
             </span><br />
             <span className="text-slate-200">{currentT.roleLine2}</span><br />
-            <span className="text-slate-400 text-3xl sm:text-5xl">{currentT.roleLine3}</span>
+            <span className="text-slate-400 text-xl sm:text-5xl">{currentT.roleLine3}</span>
           </h1>
 
-          <p className="text-slate-400 text-base sm:text-lg mb-10 max-w-xl leading-relaxed">
+          <p className="text-slate-400 text-xs sm:text-lg mb-6 sm:mb-10 max-w-xl leading-relaxed">
             {currentT.bio}
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <a href="#projects" className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-xl shadow-cyan-500/20 hover:opacity-90 transition-all">
+          <div className="flex flex-wrap gap-2 sm:gap-4">
+            <a href="#projects" className="px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-xs sm:text-sm shadow-xl shadow-cyan-500/20 hover:opacity-90 transition-all">
               {currentT.viewProjects}
             </a>
             <a 
-             href={profileCv}
+              href={profileCv}
               target="_blank" 
               rel="noopener noreferrer"
               download="Saja_Alwahedi_CV.pdf" 
-              className="px-7 py-3.5 rounded-xl border border-slate-800 bg-slate-900/50 text-slate-300 font-semibold text-sm hover:border-cyan-500/50 transition-all text-center inline-block"
+              className="px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-xl border border-slate-800 bg-slate-900/50 text-slate-300 font-semibold text-xs sm:text-sm hover:border-cyan-500/50 transition-all text-center inline-block"
             >
               {currentT.downloadCv}
             </a>
           </div>
         </div>
 
-        <div className="w-full lg:w-5/12 flex justify-center">
-          <div className="relative group scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-            <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
+        <div className="w-5/12 sm:w-5/12 flex justify-center">
+          <div className="relative group scroll-animate opacity-0 translate-y-10 transition-all duration-700 w-full max-w-[280px] sm:max-w-sm">
+            <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-[2rem] sm:rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-60 transition duration-500"></div>
             
-            <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-[2rem] border border-slate-800 bg-gradient-to-b from-slate-900 to-[#0b0e14] overflow-hidden p-3 shadow-2xl">
-              <img src={profileImg} alt="Saja Alwahedi" className="w-full h-full object-cover object-top rounded-2xl" />
-              
-              <div className="absolute top-6 left-6 px-3 py-1.5 rounded-xl backdrop-blur-md bg-slate-950/80 border border-slate-800/80 text-[11px]">
-                <div className="text-slate-400 text-[9px] uppercase tracking-wider font-mono">Stack</div>
-                <div className="font-bold text-cyan-400">React · Tailwind</div>
-              </div>
-
-              <div className="absolute top-1/2 right-4 -translate-y-1/2 px-3 py-1.5 rounded-xl backdrop-blur-md bg-slate-950/80 border border-slate-800/80 text-[11px]">
-                <div className="text-slate-400 text-[9px] uppercase tracking-wider font-mono">Focus</div>
-                <div className="font-bold text-cyan-400">UI / UX Design</div>
-              </div>
-
-              <div className="absolute bottom-6 left-6 right-6 p-3.5 rounded-xl backdrop-blur-md bg-slate-950/90 border border-slate-800/80 flex items-center justify-between text-xs">
-                <div>
-                  <div className="text-[10px] text-cyan-400 font-bold">Saja Alwahedi</div>
-                  <div className="text-[10px] text-slate-400">Gaza, Palestine</div>
-                </div>
-                <div className="text-right">
-                  <div className="text-[10px] text-slate-400">Open to</div>
-                  <div className="font-bold text-emerald-400">Remote · Global</div>
-                </div>
-              </div>
+            <div className="relative w-full h-64 sm:h-96 rounded-2xl sm:rounded-[2rem] border border-slate-800 bg-gradient-to-b from-slate-900 to-[#0b0e14] overflow-hidden p-2 sm:p-3 shadow-2xl">
+              <img src={profileImg} alt="Saja Alwahedi" className="w-full h-full object-cover object-top rounded-xl sm:rounded-2xl" />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about-section" className="max-w-7xl mx-auto px-6 py-24 relative z-10">
+      <section id="about-section" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 relative z-10">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-6 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
           {currentT.aboutTag}
@@ -307,85 +286,85 @@ export default function App() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-8 leading-[1.2]">
+            <h2 className="text-2xl sm:text-5xl font-extrabold tracking-tight mb-6 sm:mb-8 leading-[1.2]">
               {currentT.aboutTitle}
             </h2>
-            <p className="text-slate-300 text-base sm:text-lg mb-6 leading-relaxed">
+            <p className="text-slate-300 text-sm sm:text-lg mb-4 sm:mb-6 leading-relaxed">
               {currentT.aboutDesc1}
             </p>
-            <p className="text-slate-400 text-sm sm:text-base mb-10 leading-relaxed">
+            <p className="text-slate-400 text-xs sm:text-base mb-8 sm:mb-10 leading-relaxed">
               {currentT.aboutDesc2}
             </p>
 
-            <div className="flex flex-wrap gap-3">
-              <span className="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300">🎓 Computer Science Student</span>
-              <span className="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300">💻 Front-End Developer</span>
-              <span className="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300">✨ UI Integration Specialist</span>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-[11px] sm:text-xs font-medium text-slate-300">🎓 Computer Science Student</span>
+              <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-slate-900/80 border border-slate-800 text-[11px] sm:text-xs font-medium text-slate-300">💻 Front-End Developer</span>
             </div>
           </div>
 
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-            <div className="p-5 sm:p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-40 sm:h-48">
-              <span className="text-cyan-400 text-base sm:text-lg">❖</span>
+          <div className="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+            <div className="p-4 sm:p-7 rounded-2xl sm:rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-36 sm:h-48">
+              <span className="text-cyan-400 text-sm sm:text-lg">❖</span>
               <div>
                 <div className="text-2xl sm:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">3+</div>
-                <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Years Experience</div>
+                <div className="text-[10px] sm:text-xs text-slate-400 font-medium">Years Experience</div>
               </div>
             </div>
-            <div className="p-5 sm:p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-40 sm:h-48">
-              <span className="text-cyan-400 text-base sm:text-lg">❖</span>
+            <div className="p-4 sm:p-7 rounded-2xl sm:rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-36 sm:h-48">
+              <span className="text-cyan-400 text-sm sm:text-lg">❖</span>
               <div>
                 <div className="text-2xl sm:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">15+</div>
-                <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Projects Completed</div>
+                <div className="text-[10px] sm:text-xs text-slate-400 font-medium">Projects Completed</div>
               </div>
             </div>
-            <div className="p-5 sm:p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-40 sm:h-48">
-              <span className="text-cyan-400 text-base sm:text-lg">❖</span>
+            <div className="p-4 sm:p-7 rounded-2xl sm:rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-36 sm:h-48">
+              <span className="text-cyan-400 text-sm sm:text-lg">❖</span>
               <div>
-                <div className="text-xl sm:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">React</div>
-                <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Frontend Specialist</div>
+                <div className="text-lg sm:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">React</div>
+                <div className="text-[10px] sm:text-xs text-slate-400 font-medium">Frontend Specialist</div>
               </div>
             </div>
-            <div className="p-5 sm:p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-40 sm:h-48">
-              <span className="text-cyan-400 text-base sm:text-lg">❖</span>
+            <div className="p-4 sm:p-7 rounded-2xl sm:rounded-3xl border border-slate-800/80 bg-slate-900/40 flex flex-col justify-between h-36 sm:h-48">
+              <span className="text-cyan-400 text-sm sm:text-lg">❖</span>
               <div>
-                <div className="text-xl sm:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">UI/UX</div>
-                <div className="text-[11px] sm:text-xs text-slate-400 font-medium">Modern Interfaces</div>
+                <div className="text-lg sm:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">UI/UX</div>
+                <div className="text-[10px] sm:text-xs text-slate-400 font-medium">Modern Interfaces</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="skills" className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-        <div className="mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-          <h2 className="text-3xl sm:text-4xl font-extrabold mb-3 tracking-tight">{currentT.toolkitTitle}</h2>
-          <p className="text-slate-400 text-sm sm:text-base">{currentT.toolkitSub}</p>
+      {/* قسم الأدوات: 2 جمب بعض و 2 تحت بعض حتى على الجوال */}
+      <section id="skills" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10">
+        <div className="mb-8 sm:mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+          <h2 className="text-2xl sm:text-4xl font-extrabold mb-2 sm:mb-3 tracking-tight">{currentT.toolkitTitle}</h2>
+          <p className="text-slate-400 text-xs sm:text-base">{currentT.toolkitSub}</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-8">
           {skillCards.map((card, idx) => (
-            <div key={idx} className="p-8 rounded-3xl border border-slate-800/80 bg-slate-900/40 hover:border-cyan-500/40 transition-all scroll-animate opacity-0 translate-y-10 duration-700 shadow-xl" style={{ transitionDelay: `${idx * 150}ms` }}>
-              <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-800/80">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+            <div key={idx} className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-800/80 bg-slate-900/40 hover:border-cyan-500/40 transition-all scroll-animate opacity-0 translate-y-10 duration-700 shadow-xl flex flex-col justify-between" style={{ transitionDelay: `${idx * 150}ms` }}>
+              <div className="flex items-center justify-between mb-4 sm:mb-8 pb-3 sm:pb-4 border-b border-slate-800/80">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xs sm:text-base">
                     ❖
                   </div>
-                  <h3 className="font-bold text-lg text-slate-100">{card.title}</h3>
+                  <h3 className="font-bold text-xs sm:text-lg text-slate-100 truncate">{card.title}</h3>
                 </div>
-                <span className="text-xs font-mono text-slate-400 px-3 py-1 rounded-full bg-slate-800/60 border border-slate-700/50">
+                <span className="text-[10px] sm:text-xs font-mono text-slate-400 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-slate-800/60 border border-slate-700/50">
                   {card.count}
                 </span>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-3 sm:space-y-6">
                 {card.skills.map((skill, sIdx) => (
                   <div key={sIdx}>
-                    <div className="flex justify-between text-sm mb-2">
-                      <span className="text-slate-300 font-medium">{skill.name}</span>
-                      <span className="font-mono text-slate-400 text-xs">{skill.level}</span>
+                    <div className="flex justify-between text-[11px] sm:text-sm mb-1 sm:mb-2">
+                      <span className="text-slate-300 font-medium truncate">{skill.name}</span>
+                      <span className="font-mono text-slate-400 text-[10px] sm:text-xs">{skill.level}</span>
                     </div>
-                    <div className="w-full bg-slate-800/60 h-2 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                    <div className="w-full bg-slate-800/60 h-1.5 sm:h-2 rounded-full overflow-hidden p-0.5 border border-slate-800">
                       <div className="bg-gradient-to-r from-cyan-500 via-teal-400 to-blue-600 h-full rounded-full transition-all duration-1000" style={{ width: skill.level }}></div>
                     </div>
                   </div>
@@ -396,99 +375,72 @@ export default function App() {
         </div>
       </section>
 
-      <section id="experience" className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-        <div className="mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 tracking-tight">{currentT.trackTitle}</h2>
-          <p className="text-slate-400 text-sm">{currentT.trackSub}</p>
+      {/* قسم المسار المهني، التدريب والجامعة - مربعات متساوية تماماً (3 أعمدة ع الشاشات الواسعة وعمود واحد ع الجوال) */}
+      <section id="experience" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10">
+        <div className="mb-8 sm:mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+          <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-3 tracking-tight">{currentT.trackTitle}</h2>
+          <p className="text-slate-400 text-xs sm:text-sm">{currentT.trackSub}</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           
-          <div className="p-8 rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-[#0b0e14] scroll-animate opacity-0 translate-y-10 transition-all duration-700 relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-              {lang === 'en' ? 'EXPERIENCE' : 'الخبرة المهنية'}
+          {/* المربع الأول: تدريب Tech Code */}
+          <div className="p-6 rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-[#0b0e14] scroll-animate opacity-0 translate-y-10 transition-all duration-700 relative overflow-hidden shadow-2xl flex flex-col justify-between">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                {lang === 'en' ? 'INTERNSHIP' : 'تدريب عملي'}
+              </div>
+              <h3 className="text-lg font-extrabold mb-1 tracking-tight text-white">
+                Front-End Developer Intern
+              </h3>
+              <p className="text-cyan-400 text-xs font-semibold mb-3">Tech Code — Gaza | 120 Hours</p>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-8 tracking-tight text-white">
-              {lang === 'en' ? 'Professional track.' : 'المسار المهني.'}
-            </h2>
-
-            <div className="p-7 rounded-3xl border border-slate-800/80 bg-[#0c0e15]/90 relative">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xl shadow-lg shadow-cyan-500/20 shrink-0">
-                  💻
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-1">Front-End Developer</h3>
-                  <p className="text-xs text-slate-400 font-medium">Independent & Freelance</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div className="p-4 rounded-2xl border border-slate-800/60 bg-slate-950/40">
-                  <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
-                    <span>⏳</span>
-                    <span>{lang === 'en' ? 'Timeline' : 'الفترة الزمنية'}</span>
-                  </div>
-                  <div className="font-bold text-white text-sm">2024 — Present</div>
-                </div>
-
-                <div className="p-4 rounded-2xl border border-slate-800/60 bg-slate-950/40">
-                  <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
-                    <span>💼</span>
-                    <span>{lang === 'en' ? 'Status' : 'الحالة'}</span>
-                  </div>
-                  <div className="font-bold text-emerald-400 text-sm">Active & Available</div>
-                </div>
-              </div>
-
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80 pt-4">
-                {lang === 'en' 
-                  ? "Building responsive web apps, interactive user interfaces, and integrating modern design components." 
-                  : "تطوير تطبيقات ويب متجاوبة، واجهات مستخدم تفاعلية، ودمج مكونات التصميم الحديثة."}
-              </p>
-            </div>
+            <ul className="space-y-2 text-xs text-slate-300 leading-relaxed border-t border-slate-800/80 pt-3 list-disc list-inside">
+              <li>Developed responsive web pages and reusable UI components.</li>
+              <li>Implemented responsive layouts for all devices.</li>
+              <li>Applied Git and GitHub for version control.</li>
+              <li>Collaborated on front-end tasks and UI improvements.</li>
+            </ul>
           </div>
 
-          <div id="education" className="p-8 rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-[#0b0e14] scroll-animate opacity-0 translate-y-10 transition-all duration-700 delay-150 relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-              {currentT.eduTag}
+          {/* المربع الثاني: التدريب الميداني Code Tech */}
+          <div className="p-6 rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-[#0b0e14] scroll-animate opacity-0 translate-y-10 transition-all duration-700 relative overflow-hidden shadow-2xl flex flex-col justify-between">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                {lang === 'en' ? 'FIELD TRAINING' : 'تدريب ميداني'}
+              </div>
+              <h3 className="text-lg font-extrabold mb-1 tracking-tight text-white">
+                Front-End Developer Trainee
+              </h3>
+              <p className="text-cyan-400 text-xs font-semibold mb-3">Code Tech — Field Training | 120 Hours</p>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-8 tracking-tight text-white">{currentT.eduTitle}</h2>
+            <ul className="space-y-2 text-xs text-slate-300 leading-relaxed border-t border-slate-800/80 pt-3 list-disc list-inside">
+              <li>Completed 120 hours of supervised training through Al-Azhar University.</li>
+              <li>Practiced front-end development using HTML, CSS, and React.js.</li>
+              <li>Worked on building and improving web layouts and user interfaces.</li>
+            </ul>
+          </div>
 
-            <div className="p-7 rounded-3xl border border-slate-800/80 bg-[#0c0e15]/90 relative">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white text-xl shadow-lg shadow-cyan-500/20 shrink-0">
-                  🎓
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-1">{currentT.universityName}</h3>
-                  <p className="text-xs text-slate-400 font-medium">{currentT.degreeName}</p>
-                </div>
+          {/* المربع الثالث: التعليم الجامعي (بنفس الطول والتصميم تماماً) */}
+          <div id="education" className="p-6 rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-[#0b0e14] scroll-animate opacity-0 translate-y-10 transition-all duration-700 relative overflow-hidden shadow-2xl flex flex-col justify-between">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                {currentT.eduTag}
               </div>
+              <h3 className="text-lg font-extrabold mb-1 tracking-tight text-white">{currentT.eduTitle}</h3>
+              <p className="text-cyan-400 text-xs font-semibold mb-3">{currentT.universityName}</p>
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl border border-slate-800/60 bg-slate-950/40">
-                  <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
-                    <span>📅</span>
-                    <span>{currentT.gradYearLabel}</span>
-                  </div>
-                  <div className="font-bold text-white text-sm">2026</div>
-                </div>
-
-                <div className="p-4 rounded-2xl border border-slate-800/60 bg-slate-950/40">
-                  <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
-                    <span>🏆</span>
-                    <span>{currentT.gradeLabel}</span>
-                  </div>
-                  <div className="font-bold text-emerald-400 text-sm">{currentT.gradeValue}</div>
-                </div>
+            <div className="border-t border-slate-800/80 pt-3">
+              <p className="text-xs text-slate-300 mb-3">{currentT.degreeName}</p>
+              <div className="p-3 rounded-xl border border-slate-800/60 bg-slate-950/40 flex items-center justify-between">
+                <span className="text-xs text-slate-400">{currentT.gradeLabel}</span>
+                <span className="font-bold text-emerald-400 text-xs">{currentT.gradeValue}</span>
               </div>
             </div>
           </div>
@@ -496,35 +448,37 @@ export default function App() {
         </div>
       </section>
 
-      <section id="projects" className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-        <div className="mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3 tracking-tight">{currentT.projectsTitle}</h2>
-          <p className="text-slate-400 text-sm">{currentT.projectsSub}</p>
+      {/* قسم المشاريع */}
+      <section id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10">
+        <div className="mb-8 sm:mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+          <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-3 tracking-tight">{currentT.projectsTitle}</h2>
+          <p className="text-slate-400 text-xs sm:text-sm">{currentT.projectsSub}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {projects.map((project, idx) => (
-            <div key={idx} className="p-7 rounded-3xl border border-slate-800/80 bg-slate-900/40 hover:border-cyan-500/50 transition-all flex flex-col justify-between group scroll-animate opacity-0 translate-y-10 duration-700" style={{ transitionDelay: `${idx * 150}ms` }}>
+            <div key={idx} className="p-3 sm:p-7 rounded-2xl sm:rounded-3xl border border-slate-800/80 bg-slate-900/40 hover:border-cyan-500/50 transition-all flex flex-col justify-between group scroll-animate opacity-0 translate-y-10 duration-700" style={{ transitionDelay: `${idx * 150}ms` }}>
               <div>
-                <div className="h-44 rounded-2xl bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800/60 mb-6 flex items-center justify-center relative overflow-hidden group-hover:border-cyan-500/30 transition-colors">
-                  <span className="text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <div className="h-24 sm:h-44 rounded-xl sm:rounded-2xl bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800/60 mb-3 sm:mb-6 flex items-center justify-center relative overflow-hidden group-hover:border-cyan-500/30 transition-colors">
+                  <span className="text-sm sm:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center px-1">
                     {project.title.split(' ')[0]}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-cyan-400 group-hover:translate-x-1 transition-transform">{project.title}</h3>
-                <p className="text-slate-400 text-xs sm:text-sm mb-6 leading-relaxed">{project.desc}</p>
-                <div className="flex flex-wrap gap-2 mb-8">
+                <h3 className="text-xs sm:text-lg font-bold mb-1 sm:mb-2 text-cyan-400 group-hover:translate-x-1 transition-transform line-clamp-1">{project.title}</h3>
+                <p className="text-slate-400 text-[10px] sm:text-sm mb-3 sm:mb-6 leading-relaxed line-clamp-2">{project.desc}</p>
+                <div className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-8">
                   {project.tech.map((t, tIdx) => (
-                    <span key={tIdx} className="text-[11px] px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono">
+                    <span key={tIdx} className="text-[9px] sm:text-[11px] px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono">
                       {t}
                     </span>
                   ))}
                 </div>
               </div>
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-800/80">
-                <a href={project.demo} target="_blank" rel="noreferrer" className="flex-1 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white text-xs font-semibold text-center transition-all shadow-lg shadow-cyan-500/20">
+              <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 pt-3 sm:pt-4 border-t border-slate-800/80">
+                <a href={project.demo} target="_blank" rel="noreferrer" className="w-full sm:flex-1 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white text-[10px] sm:text-xs font-semibold text-center transition-all shadow-lg shadow-cyan-500/20">
                   {currentT.liveDemo} 🚀
                 </a>
-                <a href={project.github} target="_blank" rel="noreferrer" className="flex-1 py-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-cyan-400 text-slate-300 text-xs font-semibold text-center transition-all">
+                <a href={project.github} target="_blank" rel="noreferrer" className="w-full sm:flex-1 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl border border-slate-800 bg-slate-900 hover:border-cyan-400 text-slate-300 text-[10px] sm:text-xs font-semibold text-center transition-all">
                   {currentT.github} 💻
                 </a>
               </div>
@@ -533,16 +487,16 @@ export default function App() {
         </div>
       </section>
 
-      <section id="contact" className="max-w-7xl mx-auto px-6 py-20 relative z-10 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 sm:p-12 rounded-3xl border border-slate-800/80 bg-slate-900/30 backdrop-blur-md">
+      <section id="contact" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 p-6 sm:p-12 rounded-3xl border border-slate-800/80 bg-slate-900/30 backdrop-blur-md">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3">{currentT.letBuild}</h2>
-            <p className="text-slate-400 text-sm mb-8 leading-relaxed">{currentT.letBuildSub}</p>
+            <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-3">{currentT.letBuild}</h2>
+            <p className="text-slate-400 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed">{currentT.letBuildSub}</p>
             
-            <div className="space-y-4 text-sm">
+            <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <div className="flex items-center gap-3 text-slate-300">
                 <span className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">✉️</span>
-                <span>sajaraed302@gmail.com</span>
+                <span className="truncate">sajaraed302@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-slate-300">
                 <span className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">📱</span>
@@ -555,27 +509,27 @@ export default function App() {
             </div>
           </div>
 
-          <form onSubmit={(e) => { e.preventDefault(); alert(lang === 'ar' ? 'تم استلام رسالتك بنجاح!' : 'Message sent successfully!'); }} className="space-y-4">
+          <form onSubmit={(e) => { e.preventDefault(); alert(lang === 'ar' ? 'تم استلام رسالتك بنجاح!' : 'Message sent successfully!'); }} className="space-y-3 sm:space-y-4">
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-1.5">{currentT.formName}</label>
-              <input type="text" required className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-sm focus:border-cyan-500 focus:outline-none transition-colors" />
+              <label className="block text-xs font-medium text-slate-400 mb-1">{currentT.formName}</label>
+              <input type="text" required className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-xs sm:text-sm focus:border-cyan-500 focus:outline-none transition-colors" />
             </div>
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-1.5">{currentT.formEmail}</label>
-              <input type="email" required className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-sm focus:border-cyan-500 focus:outline-none transition-colors" />
+              <label className="block text-xs font-medium text-slate-400 mb-1">{currentT.formEmail}</label>
+              <input type="email" required className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-xs sm:text-sm focus:border-cyan-500 focus:outline-none transition-colors" />
             </div>
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-1.5">{currentT.formMessage}</label>
-              <textarea rows="4" required className="w-full px-4 py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-sm focus:border-cyan-500 focus:outline-none transition-colors resize-none"></textarea>
+              <label className="block text-xs font-medium text-slate-400 mb-1">{currentT.formMessage}</label>
+              <textarea rows="3" required className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-800 bg-slate-950/60 text-slate-200 text-xs sm:text-sm focus:border-cyan-500 focus:outline-none transition-colors resize-none"></textarea>
             </div>
-            <button type="submit" className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-xl shadow-cyan-500/20 hover:opacity-90 transition-all">
+            <button type="submit" className="w-full py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-xs sm:text-sm shadow-xl shadow-cyan-500/20 hover:opacity-90 transition-all">
               {currentT.sendMsg}
             </button>
           </form>
         </div>
       </section>
 
-      <footer className="max-w-7xl mx-auto px-6 py-10 border-t border-slate-800/80 text-center text-xs text-slate-500">
+      <footer className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 border-t border-slate-800/80 text-center text-[11px] sm:text-xs text-slate-500">
         {currentT.footer}
       </footer>
     </div>
