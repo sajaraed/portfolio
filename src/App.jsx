@@ -335,47 +335,49 @@ export default function App() {
         </div>
       </section>
 
-      {/* قسم الأدوات: 2 جمب بعض و 2 تحت بعض حتى على الجوال */}
+      {/* قسم المهارات مرتب ومتساوي تماماً */}
       <section id="skills" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10">
         <div className="mb-8 sm:mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-2xl sm:text-4xl font-extrabold mb-2 sm:mb-3 tracking-tight">{currentT.toolkitTitle}</h2>
           <p className="text-slate-400 text-xs sm:text-base">{currentT.toolkitSub}</p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 items-stretch">
           {skillCards.map((card, idx) => (
-            <div key={idx} className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-800/80 bg-slate-900/40 hover:border-cyan-500/40 transition-all scroll-animate opacity-0 translate-y-10 duration-700 shadow-xl flex flex-col justify-between" style={{ transitionDelay: `${idx * 150}ms` }}>
-              <div className="flex items-center justify-between mb-4 sm:mb-8 pb-3 sm:pb-4 border-b border-slate-800/80">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xs sm:text-base">
-                    ❖
+            <div key={idx} className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-800/80 bg-slate-900/40 hover:border-cyan-500/40 transition-all scroll-animate opacity-0 translate-y-10 duration-700 shadow-xl flex flex-col justify-between h-full" style={{ transitionDelay: `${idx * 150}ms` }}>
+              <div>
+                <div className="flex items-center justify-between mb-4 sm:mb-8 pb-3 sm:pb-4 border-b border-slate-800/80">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xs sm:text-base">
+                      ❖
+                    </div>
+                    <h3 className="font-bold text-xs sm:text-lg text-slate-100 truncate">{card.title}</h3>
                   </div>
-                  <h3 className="font-bold text-xs sm:text-lg text-slate-100 truncate">{card.title}</h3>
+                  <span className="text-[10px] sm:text-xs font-mono text-slate-400 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-slate-800/60 border border-slate-700/50">
+                    {card.count}
+                  </span>
                 </div>
-                <span className="text-[10px] sm:text-xs font-mono text-slate-400 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-slate-800/60 border border-slate-700/50">
-                  {card.count}
-                </span>
-              </div>
 
-              <div className="space-y-3 sm:space-y-6">
-                {card.skills.map((skill, sIdx) => (
-                  <div key={sIdx}>
-                    <div className="flex justify-between text-[11px] sm:text-sm mb-1 sm:mb-2">
-                      <span className="text-slate-300 font-medium truncate">{skill.name}</span>
-                      <span className="font-mono text-slate-400 text-[10px] sm:text-xs">{skill.level}</span>
+                <div className="space-y-3 sm:space-y-5">
+                  {card.skills.map((skill, sIdx) => (
+                    <div key={sIdx}>
+                      <div className="flex justify-between text-[11px] sm:text-sm mb-1 sm:mb-2">
+                        <span className="text-slate-300 font-medium truncate">{skill.name}</span>
+                        <span className="font-mono text-slate-400 text-[10px] sm:text-xs">{skill.level}</span>
+                      </div>
+                      <div className="w-full bg-slate-800/60 h-1.5 sm:h-2 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                        <div className="bg-gradient-to-r from-cyan-500 via-teal-400 to-blue-600 h-full rounded-full transition-all duration-1000" style={{ width: skill.level }}></div>
+                      </div>
                     </div>
-                    <div className="w-full bg-slate-800/60 h-1.5 sm:h-2 rounded-full overflow-hidden p-0.5 border border-slate-800">
-                      <div className="bg-gradient-to-r from-cyan-500 via-teal-400 to-blue-600 h-full rounded-full transition-all duration-1000" style={{ width: skill.level }}></div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* قسم المسار المهني، التدريب والجامعة - مربعات متساوية تماماً (3 أعمدة ع الشاشات الواسعة وعمود واحد ع الجوال) */}
+      {/* قسم المسار المهني، التدريب والجامعة */}
       <section id="experience" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10">
         <div className="mb-8 sm:mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-3 tracking-tight">{currentT.trackTitle}</h2>
@@ -384,7 +386,6 @@ export default function App() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           
-          {/* المربع الأول: تدريب Tech Code */}
           <div className="p-6 rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-[#0b0e14] scroll-animate opacity-0 translate-y-10 transition-all duration-700 relative overflow-hidden shadow-2xl flex flex-col justify-between">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-3">
@@ -405,7 +406,6 @@ export default function App() {
             </ul>
           </div>
 
-          {/* المربع الثاني: التدريب الميداني Code Tech */}
           <div className="p-6 rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-[#0b0e14] scroll-animate opacity-0 translate-y-10 transition-all duration-700 relative overflow-hidden shadow-2xl flex flex-col justify-between">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-3">
@@ -425,7 +425,6 @@ export default function App() {
             </ul>
           </div>
 
-          {/* المربع الثالث: التعليم الجامعي (بنفس الطول والتصميم تماماً) */}
           <div id="education" className="p-6 rounded-3xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-[#0b0e14] scroll-animate opacity-0 translate-y-10 transition-all duration-700 relative overflow-hidden shadow-2xl flex flex-col justify-between">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-slate-900 border border-slate-800 text-cyan-400 mb-3">
@@ -448,7 +447,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* قسم المشاريع */}
+      {/* قسم المشاريع مع تعديل الأزرار لتظهر بجانب بعضها */}
       <section id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10">
         <div className="mb-8 sm:mb-12 scroll-animate opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-3 tracking-tight">{currentT.projectsTitle}</h2>
@@ -474,11 +473,11 @@ export default function App() {
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 pt-3 sm:pt-4 border-t border-slate-800/80">
-                <a href={project.demo} target="_blank" rel="noreferrer" className="w-full sm:flex-1 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white text-[10px] sm:text-xs font-semibold text-center transition-all shadow-lg shadow-cyan-500/20">
+              <div className="flex flex-row items-center gap-1.5 sm:gap-3 pt-3 sm:pt-4 border-t border-slate-800/80">
+                <a href={project.demo} target="_blank" rel="noreferrer" className="flex-1 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white text-[10px] sm:text-xs font-semibold text-center transition-all shadow-lg shadow-cyan-500/20 truncate px-1">
                   {currentT.liveDemo} 🚀
                 </a>
-                <a href={project.github} target="_blank" rel="noreferrer" className="w-full sm:flex-1 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl border border-slate-800 bg-slate-900 hover:border-cyan-400 text-slate-300 text-[10px] sm:text-xs font-semibold text-center transition-all">
+                <a href={project.github} target="_blank" rel="noreferrer" className="flex-1 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl border border-slate-800 bg-slate-900 hover:border-cyan-400 text-slate-300 text-[10px] sm:text-xs font-semibold text-center transition-all truncate px-1">
                   {currentT.github} 💻
                 </a>
               </div>

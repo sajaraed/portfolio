@@ -1,9 +1,9 @@
 {
-  "homepage": "https://sajaraed.github.io/portfolio",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://sajaraed.github.io/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
