@@ -120,7 +120,9 @@ export default function App() {
         { name: "HTML5", level: "97%" },
         { name: "JavaScript", level: "94%" },
         { name: "CSS3", level: "95%" },
-        { name: "TypeScript", level: "95%" }
+        { name: "TypeScript", level: "95%" },
+        { name: "Next.js", level: "90%" }
+
       ]
     },
     {
@@ -154,8 +156,16 @@ export default function App() {
       ]
     }
   ];
-
-  const projects = [
+const projects = [
+    {
+      title: "Nest Furniture",
+      desc: lang === 'en'
+        ? "A high-performance Luxury Minimalist furniture e-commerce web application built with Next.js, TypeScript, and Tailwind CSS. Features full bilingual Arabic/English (RTL/LTR) support, interactive product filtering, shopping cart drawer, and a seamless mobile-first UX."
+        : "تطبيق متجر إلكتروني فاخر وعصري للأثاث مبني باستخدام Next.js وTypeScript وTailwind CSS، يدعم اللغتين العربية والإنجليزية (RTL/LTR) بالكامل مع فلترة تفاعلية للمنتجات وسلة تسوق جانبية.",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+      demo: "https://nest-furniture-yx1z.vercel.app/",
+      github: "https://github.com/sajaraed/nest-furniture"
+    },
     {
       title: "Glass Weather Dashboard",
       desc: lang === 'en' ? "A modern weather dashboard featuring Glassmorphism design, dark/light themes, and interactive maps." : "لوحة تحكم للطقس بتصميم زجاجي عصري مع خرائط تفاعلية ودعم كامل للوضع الداكن.",
