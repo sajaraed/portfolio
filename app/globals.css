@@ -1,1 +1,5 @@
 @import "tailwindcss";
+@source inline("from-emerald-500 to-teal-400");
+@source inline("from-cyan-500 to-sky-400");
+@source inline("from-blue-500 to-indigo-400");
+@source inline("from-amber-500 to-orange-400");
