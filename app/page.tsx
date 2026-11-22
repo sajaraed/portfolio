@@ -22,9 +22,16 @@ interface Project {
   github: string;
 }
 
-/* ------------------------------------------------------------------ */
-/*  Reveal: scroll animation using Tailwind classes only (no CSS file) */
-/* ------------------------------------------------------------------ */
+function levelColors(level: number) {
+  if (level >= 95)
+    return { text: "text-emerald-400", bar: "from-emerald-500 to-teal-400" };
+  if (level >= 90)
+    return { text: "text-cyan-400", bar: "from-cyan-500 to-sky-400" };
+  if (level >= 85)
+    return { text: "text-blue-400", bar: "from-blue-500 to-indigo-400" };
+  return { text: "text-amber-400", bar: "from-amber-500 to-orange-400" };
+}
+
 function Reveal({
   children,
   className = "",
@@ -85,7 +92,6 @@ export default function Home() {
 
   const isAr = lang === "ar";
 
-  /* smooth scrolling without touching globals.css */
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
@@ -93,13 +99,11 @@ export default function Home() {
     };
   }, []);
 
-  /* keep <html> in sync with the selected language */
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = isAr ? "rtl" : "ltr";
   }, [lang, isAr]);
 
-  /* close mobile menu with Escape / when resizing to desktop */
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
     const onResize = () => window.innerWidth >= 1024 && setMenuOpen(false);
@@ -425,10 +429,8 @@ export default function Home() {
       className="bg-[#090a0f] text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-white font-sans overflow-x-hidden relative"
       dir={isAr ? "rtl" : "ltr"}
     >
-      {/* background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293d15_1px,transparent_1px),linear-gradient(to_bottom,#1f293d15_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-      {/* ============================ HEADER ============================ */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#090a0f]/85 backdrop-blur-xl border-b border-slate-800/60">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2">
           <a
@@ -444,7 +446,6 @@ export default function Home() {
             </span>
           </a>
 
-          {/* desktop nav — unchanged */}
           <nav className="hidden lg:flex items-center gap-8 text-sm text-slate-400 font-medium">
             {navItems.map((item) => (
               <a
@@ -473,7 +474,6 @@ export default function Home() {
               {currentT.letstalk}
             </a>
 
-            {/* 3-lines button (mobile + tablet) */}
             <button
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={currentT.menu}
@@ -500,7 +500,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* mobile menu panel */}
         <div
           id="mobile-menu"
           className={`lg:hidden overflow-hidden transition-[max-height] duration-300 ease-out border-slate-800/60 ${
@@ -529,8 +528,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* ============================= HERO ============================= */}
-      {/* same layout as laptop on every screen: text + photo side by side */}
       <section
         id="about-hero"
         className="max-w-7xl mx-auto px-3 sm:px-6 pt-24 sm:pt-36 pb-10 sm:pb-20 flex flex-row items-center justify-between gap-3 sm:gap-10 lg:gap-16 relative z-10"
@@ -593,7 +590,6 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* ============================= ABOUT ============================ */}
       <section id="about-section" className={sectionCls}>
         <Reveal className="mb-5 sm:mb-6">
           <div className={pillCls}>
@@ -656,7 +652,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============================= SKILLS =========================== */}
       <section id="skills" className={sectionCls}>
         <Reveal className="mb-6 sm:mb-12">
           <h2 className="text-2xl sm:text-4xl font-extrabold mb-2 sm:mb-3 tracking-tight">
@@ -667,7 +662,6 @@ export default function Home() {
           </p>
         </Reveal>
 
-        {/* 2 cards per row on every screen (same as laptop) */}
         <div className="grid grid-cols-2 gap-3 sm:gap-8 items-stretch">
           {skillCards.map((card, idx) => (
             <Reveal key={idx} className="h-full" delay={(idx % 2) * 120}>
@@ -688,27 +682,30 @@ export default function Home() {
                   </div>
 
                   <div className="space-y-3 sm:space-y-5">
-                    {card.skills.map((skill, sIdx) => (
-                      <div key={sIdx}>
-                        <div className="flex justify-between gap-1 text-[11px] sm:text-sm mb-1 sm:mb-2">
-                          <span className="text-slate-300 font-medium">
-                            {skill.name}
-                          </span>
-                          <span
-                            className="font-mono text-slate-400 text-[10px] sm:text-xs"
-                            dir="ltr"
-                          >
-                            {skill.level}%
-                          </span>
+                    {card.skills.map((skill, sIdx) => {
+                      const c = levelColors(skill.level);
+                      return (
+                        <div key={sIdx}>
+                          <div className="flex justify-between gap-1 text-[11px] sm:text-sm mb-1 sm:mb-2">
+                            <span className="text-slate-300 font-medium">
+                              {skill.name}
+                            </span>
+                            <span
+                              className={`font-mono font-bold text-[10px] sm:text-xs ${c.text}`}
+                              dir="ltr"
+                            >
+                              {skill.level}%
+                            </span>
+                          </div>
+                          <div className="w-full bg-slate-800/60 h-1.5 sm:h-2 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                            <div
+                              className={`bg-gradient-to-r ${c.bar} h-full rounded-full transition-[width] duration-1000 ease-out motion-reduce:transition-none`}
+                              style={{ width: visible ? `${skill.level}%` : "0%" }}
+                            />
+                          </div>
                         </div>
-                        <div className="w-full bg-slate-800/60 h-1.5 sm:h-2 rounded-full overflow-hidden p-0.5 border border-slate-800">
-                          <div
-                            className="bg-gradient-to-r from-cyan-500 via-teal-400 to-blue-600 h-full rounded-full transition-[width] duration-1000 ease-out motion-reduce:transition-none"
-                            style={{ width: visible ? `${skill.level}%` : "0%" }}
-                          />
-                        </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -717,7 +714,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========================= EXPERIENCE + EDU ===================== */}
       <section id="experience" className={sectionCls}>
         <Reveal className="mb-6 sm:mb-12">
           <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-3 tracking-tight">
@@ -728,7 +724,6 @@ export default function Home() {
           </p>
         </Reveal>
 
-        {/* laptop: 3 cards in a row — mobile/tablet: 2 per row */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 items-stretch">
           {currentT.experiences.map((exp, i) => (
             <Reveal key={i} className="h-full" delay={i * 120}>
@@ -756,7 +751,6 @@ export default function Home() {
             </Reveal>
           ))}
 
-          {/* Education: full row on mobile/tablet, 3rd column on laptop */}
           <Reveal
             id="education"
             className="h-full scroll-mt-24 col-span-2 lg:col-span-1"
@@ -796,7 +790,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============================ PROJECTS ========================== */}
       <section id="projects" className={sectionCls}>
         <Reveal className="mb-6 sm:mb-12">
           <h2 className="text-xl sm:text-3xl font-bold mb-2 sm:mb-3 tracking-tight">
@@ -807,7 +800,6 @@ export default function Home() {
           </p>
         </Reveal>
 
-        {/* laptop: 3 per row — mobile/tablet: 2 per row */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {projects.map((project, idx) => (
             <Reveal key={idx} className="h-full" delay={(idx % 3) * 120}>
@@ -836,7 +828,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* stacked on phones so neither button is ever cut off */}
                 <div className="flex flex-col sm:flex-row items-stretch gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-slate-800/80">
                   <a
                     href={project.demo}
@@ -861,7 +852,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============================ CONTACT =========================== */}
       <section id="contact" className={sectionCls}>
         <Reveal>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 p-5 sm:p-12 rounded-3xl border border-slate-800/80 bg-slate-900/30 backdrop-blur-md">
@@ -978,4 +968,3 @@ export default function Home() {
     </div>
   );
 }
-
