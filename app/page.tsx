@@ -69,7 +69,7 @@ function Reveal({
       className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
         visible
           ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0"
+          : "opacity-100 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0"
       } ${className}`}
     >
       {typeof children === "function" ? children(visible) : children}
@@ -488,7 +488,7 @@ export default function Home() {
               />
               <span
                 className={`block w-5 h-0.5 bg-slate-200 rounded transition-opacity duration-300 ${
-                  menuOpen ? "opacity-0" : ""
+                  menuOpen ? "opacity-100" : ""
                 }`}
               />
               <span
